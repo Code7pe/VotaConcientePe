@@ -17,6 +17,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".DistritosActivity"></activity>
+        <activity android:name=".activity.apoyaTuCandidato"></activity>
     </application>
 
 </manifest>
