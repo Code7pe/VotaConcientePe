@@ -5,6 +5,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
 import com.sdkpalestra.votainformadope.R;
 
@@ -37,9 +38,19 @@ public class DistritoRecyclerViewAdapter extends RecyclerView.Adapter<DistritoVi
     public void onBindViewHolder(DistritoViewHolder holder, int i) {
         // Al ir desplazando la pantalla con el celular y aparesca uno nuevo,
         // se ejecuta el onBindViewHolder para llenar el nuevo elemento
-        Distrito distrito = mDistritos.get(i);
+        final Distrito distrito = mDistritos.get(i);
+        holder.setIsRecyclable(false);
         holder.txtDistrito.setText(distrito.getNombreDistrito());
 
+        //TODO::SEGÚN TACUCHI, ESTO RECARGA, BUSCAR OTRAS FORMAS
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(mContext,distrito.getNombreDistrito(),Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        holder.setIsRecyclable(true);
     }
 
     @Override
@@ -47,6 +58,8 @@ public class DistritoRecyclerViewAdapter extends RecyclerView.Adapter<DistritoVi
         // Obtener el total de elementos
         return (null != mDistritos ? mDistritos.size() : 0);
     }
+
+
 
     public void loadData(List<Distrito> distritos) {
         // Se utiliza para actualizar toda la data del recycler view
