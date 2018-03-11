@@ -6,21 +6,28 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:layout_marginLeft="15dp"
+    android:layout_marginRight="15dp"
+    android:layout_marginTop="60dp"
     tools:context="com.sdkpalestra.votainformadope.MainActivity">
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:gravity="bottom|center_horizontal"
+        android:text="EL FUTURO DEL PERÚ..."
+        />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:gravity="center"
-        android:layout_weight="3"
-        android:text="EL FUTURO DEL PERÚ... ESTA EN TUS MANOS!"
-        android:layout_marginTop="20dp"/>
+        android:text=" ESTA EN TUS MANOS!"
+       />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Bienvenido"
-
+android:layout_marginTop="45dp"
         android:layout_gravity="left"/>
 
     <EditText
@@ -50,12 +57,14 @@
         android:layout_height="wrap_content"
         android:ems="10"
         android:text="nuevo x aqui.. Registrate"
+        android:layout_marginTop="20dp"
         />
 
     <Button
         android:id="@+id/btnRegistrate"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Registrate" />
+        android:text="Registrate"
+        android:layout_marginTop="10dp"/>
 
 </LinearLayout>
