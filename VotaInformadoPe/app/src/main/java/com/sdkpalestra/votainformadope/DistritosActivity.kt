@@ -3,9 +3,12 @@ package com.sdkpalestra.votainformadope
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.support.v7.widget.LinearLayoutManager
+import android.view.MotionEvent
+import android.view.View
 import com.sdkpalestra.votainformadope.distrito.Distrito
 import com.sdkpalestra.votainformadope.distrito.DistritoRecyclerViewAdapter
 import kotlinx.android.synthetic.main.activity_distritos.*
+import org.jetbrains.anko.toast
 
 class DistritosActivity : AppCompatActivity() {
 
@@ -17,6 +20,9 @@ class DistritosActivity : AppCompatActivity() {
         mRecyclerView.setHasFixedSize(true) // Evitar errores
 
         mRecyclerView.layoutManager = LinearLayoutManager(this)
+
+
+
         var distritos: MutableList<Distrito> = mutableListOf()
         distritos.add(Distrito("SJL"))
         distritos.add(Distrito("Rimac"))
@@ -27,6 +33,13 @@ class DistritosActivity : AppCompatActivity() {
         mRecyclerView.adapter = distritoRecyclerView
 
 //        mRecyclerView.addOnItemTouchListener()
+
+        mRecyclerView.setOnTouchListener { v: View, m: MotionEvent ->
+            toast("Click")
+            true
+        }
+
+        //smRecyclerView.ItemTouchLis
 
     }
 }

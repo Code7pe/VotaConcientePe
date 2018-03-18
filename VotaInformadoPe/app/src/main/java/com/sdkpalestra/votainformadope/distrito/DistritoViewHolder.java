@@ -19,3 +19,4 @@ public class DistritoViewHolder extends RecyclerView.ViewHolder {
         this.txtDistrito = itemView.findViewById(R.id.txtDistrito);
     }
 }
+
